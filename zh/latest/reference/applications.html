@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MVC 应用（MVC Applications） &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="路由（Routing）" href="routing.html" />
+    <link rel="prev" title="Volt 模版引擎（Volt: Template Engine）" href="volt.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="routing.html" title="路由（Routing）"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="volt.html" title="Volt 模版引擎（Volt: Template Engine）"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">MVC 应用（MVC Applications）</a><ul>
+<li><a class="reference internal" href="#single-or-multi-module-applications">单模块或多模块应用（Single or Multi Module Applications）</a><ul>
+<li><a class="reference internal" href="#single-module">单模块（Single Module）</a></li>
+<li><a class="reference internal" href="#multi-module">多模块（Multi Module）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#application-events">应用事件（Application Events）</a></li>
+<li><a class="reference internal" href="#external-resources">外部资源（External Resources）</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="volt.html" title="上一章">&lt; Volt 模版引擎（Volt: Template Engine）</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="routing.html" title="下一章">路由（Routing） &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/applications.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="mvc-mvc-applications">
+<h1>MVC 应用（MVC Applications）<a class="headerlink" href="#mvc-mvc-applications" title="永久链接至标题">¶</a></h1>
+<p>在Phalcon，策划MVC操作背后的全部困难工作通常都可以
+通过 <a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> 做到。这个组件封装了全部后端所需要的复杂
+操作，实例化每一个需要用到的组件并与项目整合在一起，从而使得MVC模式可以如期地运行。</p>
+<div class="section" id="single-or-multi-module-applications">
+<h2>单模块或多模块应用（Single or Multi Module Applications）<a class="headerlink" href="#single-or-multi-module-applications" title="永久链接至标题">¶</a></h2>
+<p>通过这个组件，你可以运行各式各样的MVC结构：</p>
+<div class="section" id="single-module">
+<h3>单模块（Single Module）<a class="headerlink" href="#single-module" title="永久链接至标题">¶</a></h3>
+<p>单一的MVC应用仅仅包含了一个模块。可以使用命名空间，但不是必需的。
+这样类型的应用可能会有以下文件目录结构：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">single/</span>
+<span class="x">    app/</span>
+<span class="x">        controllers/</span>
+<span class="x">        models/</span>
+<span class="x">        views/</span>
+<span class="x">    public/</span>
+<span class="x">        css/</span>
+<span class="x">        img/</span>
+<span class="x">        js/</span>
+</pre></div>
+</div>
+<p>如果未使用命名空间，以下的启动文件可用于编排MVC工作流：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Loader</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\View</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Di\FactoryDefault</span><span class="p">;</span>
+
+<span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Loader</span><span class="p">();</span>
+
+<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">registerDirs</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;../apps/controllers/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;../apps/models/&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">();</span>
+
+<span class="nv">$di</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FactoryDefault</span><span class="p">();</span>
+
+<span class="c1">// 注册视图组件</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+
+        <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setViewsDir</span><span class="p">(</span><span class="s2">&quot;../apps/views/&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$view</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$di</span><span class="p">);</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>如果使用了命名空间，则可以使用以下启动文件（译者注：主要区别在于使用$loader的方式）：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Loader</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\View</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Dispatcher</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Di\FactoryDefault</span><span class="p">;</span>
+
+<span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Loader</span><span class="p">();</span>
+
+<span class="c1">// 根据命名空间前缀加载</span>
+<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">registerNamespaces</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;Single</span><span class="se">\\</span><span class="s2">Controllers&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;../apps/controllers/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Single</span><span class="se">\\</span><span class="s2">Models&quot;</span>      <span class="o">=&gt;</span> <span class="s2">&quot;../apps/models/&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">();</span>
+
+<span class="nv">$di</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FactoryDefault</span><span class="p">();</span>
+
+<span class="c1">// 注册调度器，并设置控制器的默认命名空间</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;dispatcher&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$dispatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dispatcher</span><span class="p">();</span>
+
+        <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setDefaultNamespace</span><span class="p">(</span><span class="s2">&quot;Single</span><span class="se">\\</span><span class="s2">Controllers&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$dispatcher</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// 注册视图组件</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+
+        <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setViewsDir</span><span class="p">(</span><span class="s2">&quot;../apps/views/&quot;</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$view</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$di</span><span class="p">);</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-module">
+<h3>多模块（Multi Module）<a class="headerlink" href="#multi-module" title="永久链接至标题">¶</a></h3>
+<p>多模块的应用使用了相同的文档根目录但拥有多个模块。在这种情况下，可以使用以下的文件目录结构：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">multiple/</span>
+<span class="x">  apps/</span>
+<span class="x">    frontend/</span>
+<span class="x">       controllers/</span>
+<span class="x">       models/</span>
+<span class="x">       views/</span>
+<span class="x">       Module.php</span>
+<span class="x">    backend/</span>
+<span class="x">       controllers/</span>
+<span class="x">       models/</span>
+<span class="x">       views/</span>
+<span class="x">       Module.php</span>
+<span class="x">  public/</span>
+<span class="x">    css/</span>
+<span class="x">    img/</span>
+<span class="x">    js/</span>
+</pre></div>
+</div>
+<p>在apps/下的每一个目录都有自己的MVC结构。Module.php文件代表了各个模块不同的配置，如自动加载器和自定义服务：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Multiple\Backend</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Loader</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\View</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\DiInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Dispatcher</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\ModuleDefinitionInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Module</span> <span class="k">implements</span> <span class="nx">ModuleDefinitionInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * 注册自定义加载器</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">registerAutoloaders</span><span class="p">(</span><span class="nx">DiInterface</span> <span class="nv">$di</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Loader</span><span class="p">();</span>
+
+        <span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">registerNamespaces</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;Multiple</span><span class="se">\\</span><span class="s2">Backend</span><span class="se">\\</span><span class="s2">Controllers&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;../apps/backend/controllers/&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Multiple</span><span class="se">\\</span><span class="s2">Backend</span><span class="se">\\</span><span class="s2">Models&quot;</span>      <span class="o">=&gt;</span> <span class="s2">&quot;../apps/backend/models/&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="nv">$loader</span><span class="o">-&gt;</span><span class="na">register</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * 注册自定义服务</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">registerServices</span><span class="p">(</span><span class="nx">DiInterface</span> <span class="nv">$di</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Registering a dispatcher</span>
+        <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+            <span class="s2">&quot;dispatcher&quot;</span><span class="p">,</span>
+            <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nv">$dispatcher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dispatcher</span><span class="p">();</span>
+
+                <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setDefaultNamespace</span><span class="p">(</span><span class="s2">&quot;Multiple</span><span class="se">\\</span><span class="s2">Backend</span><span class="se">\\</span><span class="s2">Controllers&quot;</span><span class="p">);</span>
+
+                <span class="k">return</span> <span class="nv">$dispatcher</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">);</span>
+
+        <span class="c1">// Registering the view component</span>
+        <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+            <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+            <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nv">$view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+
+                <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setViewsDir</span><span class="p">(</span><span class="s2">&quot;../apps/backend/views/&quot;</span><span class="p">);</span>
+
+                <span class="k">return</span> <span class="nv">$view</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>还需要一个指定的启动文件来加载多模块的MVC架构：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Router</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Application</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Di\FactoryDefault</span><span class="p">;</span>
+
+<span class="nv">$di</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FactoryDefault</span><span class="p">();</span>
+
+<span class="c1">// 自定义路由</span>
+<span class="c1">// More information how to set the router up https://docs.phalconphp.com/zh/latest/reference/routing.html</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;router&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Router</span><span class="p">();</span>
+
+        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">setDefaultModule</span><span class="p">(</span><span class="s2">&quot;frontend&quot;</span><span class="p">);</span>
+
+        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+            <span class="s2">&quot;/login&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;module&quot;</span>     <span class="o">=&gt;</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;controller&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;login&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;action&quot;</span>     <span class="o">=&gt;</span> <span class="s2">&quot;index&quot;</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+            <span class="s2">&quot;/admin/products/:action&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;module&quot;</span>     <span class="o">=&gt;</span> <span class="s2">&quot;backend&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;controller&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;products&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;action&quot;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">add</span><span class="p">(</span>
+            <span class="s2">&quot;/products/:action&quot;</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;controller&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;products&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;action&quot;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$router</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="c1">// 创建应用</span>
+<span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$di</span><span class="p">);</span>
+
+<span class="c1">// 注册模块</span>
+<span class="nv">$application</span><span class="o">-&gt;</span><span class="na">registerModules</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;frontend&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;className&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Multiple</span><span class="se">\\</span><span class="s2">Frontend</span><span class="se">\\</span><span class="s2">Module&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span>      <span class="o">=&gt;</span> <span class="s2">&quot;../apps/frontend/Module.php&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;backend&quot;</span>  <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;className&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Multiple</span><span class="se">\\</span><span class="s2">Backend</span><span class="se">\\</span><span class="s2">Module&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;path&quot;</span>      <span class="o">=&gt;</span> <span class="s2">&quot;../apps/backend/Module.php&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+    <span class="c1">// 处理请求</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>如果你想在启动文件保持模块的配置，你可以使用匿名函数来注册对应的模块：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\View</span><span class="p">;</span>
+
+<span class="c1">// 创建视图组件</span>
+<span class="nv">$view</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">View</span><span class="p">();</span>
+
+<span class="c1">// 设置视图组件相关选项</span>
+<span class="c1">// ...</span>
+
+<span class="c1">// Register the installed modules</span>
+<span class="nv">$application</span><span class="o">-&gt;</span><span class="na">registerModules</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;frontend&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$di</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">setShared</span><span class="p">(</span>
+                <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+                <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setViewsDir</span><span class="p">(</span><span class="s2">&quot;../apps/frontend/views/&quot;</span><span class="p">);</span>
+
+                    <span class="k">return</span> <span class="nv">$view</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">);</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;backend&quot;</span> <span class="o">=&gt;</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$di</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$di</span><span class="o">-&gt;</span><span class="na">setShared</span><span class="p">(</span>
+                <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+                <span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$view</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">setViewsDir</span><span class="p">(</span><span class="s2">&quot;../apps/backend/views/&quot;</span><span class="p">);</span>
+
+                    <span class="k">return</span> <span class="nv">$view</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>当 <a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> 有多个模块注册时，通常
+每个都是需要的，以便每一个被匹配到的路由都能返回一个有效的模块。每个已经注册的模块都有一个相关的类来提供建立和启动自身的函数。
+而每个模块定义的类都必须实现registerAutoloaders()和registerServices()这两个方法，这两个函数会在模块即被执行时被
+<a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> 调用。</p>
+</div>
+</div>
+<div class="section" id="application-events">
+<h2>应用事件（Application Events）<a class="headerlink" href="#application-events" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> 可以把事件发送到 <a class="reference internal" href="events.html"><em>EventsManager</em></a> （如果它激活的话）。
+事件将被当作&#8221;application&#8221;类型被消费掉。目前已支持的事件如下：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">事件名称</th>
+<th class="head">消费于</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>boot</td>
+<td>当应用处理它首个请求时被执行</td>
+</tr>
+<tr class="row-odd"><td>beforeStartModule</td>
+<td>在初始化模块之前，仅当模块被注册时</td>
+</tr>
+<tr class="row-even"><td>afterStartModule</td>
+<td>在初始化模块之后，仅当模块被注册时</td>
+</tr>
+<tr class="row-odd"><td>beforeHandleRequest</td>
+<td>在执行分发环前</td>
+</tr>
+<tr class="row-even"><td>afterHandleRequest</td>
+<td>在执行分发环后</td>
+</tr>
+</tbody>
+</table>
+<p>以下示例演示了如何将侦听器绑定到组件：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\Event</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">;</span>
+
+<span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+
+<span class="nv">$application</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
+
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span>
+    <span class="s2">&quot;application&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">,</span> <span class="nv">$application</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="external-resources">
+<h2>外部资源（External Resources）<a class="headerlink" href="#external-resources" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/phalcon/mvc">Github上的MVC示例</a></li>
+</ul>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="routing.html" title="路由（Routing）"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="volt.html" title="Volt 模版引擎（Volt: Template Engine）"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>

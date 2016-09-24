@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>安装（Installation） &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="XAMPP 下的安装（Installation on XAMPP）" href="xampp.html" />
+    <link rel="prev" title="Welcome!" href="../index.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="xampp.html" title="XAMPP 下的安装（Installation on XAMPP）"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome!"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">安装（Installation）</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a><ul>
+<li><a class="reference internal" href="#related-guides">相关指南（Related Guides）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux-solaris">Linux/Solaris</a><ul>
+<li><a class="reference internal" href="#debian-ubuntu">Debian / Ubuntu</a></li>
+<li><a class="reference internal" href="#rpm-distributions-i-e-centos">RPM distributions (i.e. CentOS)</a></li>
+<li><a class="reference internal" href="#compile-from-source">Compile from source</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#freebsd">FreeBSD</a></li>
+<li><a class="reference internal" href="#checking-your-installation">确认安装（Checking your installation）</a></li>
+<li><a class="reference internal" href="#installation-notes">安装说明（Installation Notes）</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="../index.html" title="上一章">&lt; Welcome!</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="xampp.html" title="下一章">XAMPP 下的安装（Installation on XAMPP） &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/install.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="installation">
+<h1>安装（Installation）<a class="headerlink" href="#installation" title="永久链接至标题">¶</a></h1>
+<p>作为PHP C拓展形式的Phalcon，需要一个略微不同于传统PHP的库或框架的安装方法。你可以选择一个当前系统的一个二进制包下载，或者使用源代码构建它。</p>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<p>要在Windows上使用Phalcon，你可以下载一个DLL库。编辑php.ini文件，并且在最后附加上：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">extension</span><span class="o">=</span>php_phalcon.dll
+</pre></div>
+</div>
+<p>重启你的Web服务器。</p>
+<p>下面的视频是一个在Windows上安装Phalcon的步骤指南:</p>
+<div align="center"><iframe src="https://player.vimeo.com/video/40265988" width="500" height="266" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div><div class="section" id="related-guides">
+<h3>相关指南（Related Guides）<a class="headerlink" href="#related-guides" title="永久链接至标题">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="xampp.html">XAMPP 下的安装（Installation on XAMPP）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wamp.html">WAMP 下安装（Installation on WAMP）</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="linux-solaris">
+<h2>Linux/Solaris<a class="headerlink" href="#linux-solaris" title="永久链接至标题">¶</a></h2>
+<div class="section" id="debian-ubuntu">
+<h3>Debian / Ubuntu<a class="headerlink" href="#debian-ubuntu" title="永久链接至标题">¶</a></h3>
+<p>To add the repository to your distribution:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Stable releases</span>
+curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.deb.sh <span class="p">|</span> sudo bash
+
+<span class="c"># Nightly releases</span>
+curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.deb.sh <span class="p">|</span> sudo bash
+</pre></div>
+</div>
+<p>This only needs to be done only once, unless your distribution changes or you want to switch from stable to nightly builds.</p>
+<p>To install Phalcon:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install php5-phalcon
+
+<span class="c"># or for PHP 7</span>
+
+sudo apt-get install php7.0-phalcon
+</pre></div>
+</div>
+</div>
+<div class="section" id="rpm-distributions-i-e-centos">
+<h3>RPM distributions (i.e. CentOS)<a class="headerlink" href="#rpm-distributions-i-e-centos" title="永久链接至标题">¶</a></h3>
+<p>To add the repository to our distribution:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Stable releases</span>
+curl -s https://packagecloud.io/install/repositories/phalcon/stable/script.rpm.sh <span class="p">|</span> sudo bash
+
+<span class="c"># Nightly releases</span>
+curl -s https://packagecloud.io/install/repositories/phalcon/nightly/script.rpm.sh <span class="p">|</span> sudo bash
+</pre></div>
+</div>
+<p>This only needs to be done only once, unless your distribution changes or you want to switch from stable to nightly builds.</p>
+<p>To install Phalcon:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo yum install php56u-phalcon
+
+<span class="c"># or for PHP 7</span>
+
+sudo yum install php70u-phalcon
+</pre></div>
+</div>
+</div>
+<div class="section" id="compile-from-source">
+<h3>Compile from source<a class="headerlink" href="#compile-from-source" title="永久链接至标题">¶</a></h3>
+<p>在Linux/Solaris系统下，你能很轻易从源代码编译和安装这个拓展:</p>
+<p>必要的包:</p>
+<ul class="simple">
+<li>PHP &gt;= 5.5 development resources</li>
+<li>GCC compiler (Linux/Solaris)</li>
+<li>Git (如果不是已经安装在你的系统，且你没有从Github上下载这个包并通过FTP/SFTP上传到你的服务器上)</li>
+</ul>
+<p>通用平台下安装指定的软件包：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Ubuntu</span>
+sudo apt-get install php5-dev libpcre3-dev gcc make php5-mysql
+
+<span class="c"># Suse</span>
+sudo yast -i gcc make autoconf php5-devel php5-pear php5-mysql
+
+<span class="c"># CentOS/RedHat/Fedora</span>
+sudo yum install php-devel pcre-devel gcc make
+
+<span class="c"># Solaris</span>
+pkg install gcc-45 php-56 apache-php56
+</pre></div>
+</div>
+<p>创建扩展:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git clone git://github.com/phalcon/cphalcon.git
+
+<span class="nb">cd </span>cphalcon/build
+
+sudo ./install
+</pre></div>
+</div>
+<p>添加扩展到你的php配置文件:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># Suse: Add a file called phalcon.ini in /etc/php5/conf.d/ with this content:</span>
+<span class="nv">extension</span><span class="o">=</span>phalcon.so
+
+<span class="c"># CentOS/RedHat/Fedora: Add a file called phalcon.ini in /etc/php.d/ with this content:</span>
+<span class="nv">extension</span><span class="o">=</span>phalcon.so
+
+<span class="c"># Ubuntu/Debian with apache2: Add a file called 30-phalcon.ini in /etc/php5/apache2/conf.d/ with this content:</span>
+<span class="nv">extension</span><span class="o">=</span>phalcon.so
+
+<span class="c"># Ubuntu/Debian with php5-fpm: Add a file called 30-phalcon.ini in /etc/php5/fpm/conf.d/ with this content:</span>
+<span class="nv">extension</span><span class="o">=</span>phalcon.so
+
+<span class="c"># Ubuntu/Debian with php5-cli: Add a file called 30-phalcon.ini in /etc/php5/cli/conf.d/ with this content:</span>
+<span class="nv">extension</span><span class="o">=</span>phalcon.so
+</pre></div>
+</div>
+<p>重启Web服务器.</p>
+<p>如果你在 Ubuntu/Debian 下使用 php5-fpm，重启命令为：</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo service php5-fpm restart
+</pre></div>
+</div>
+<p>Phalcon自动检测你的系统架构，然而，您可以强制编译为一个特定的架构：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>cphalcon/build
+
+<span class="c"># One of the following:</span>
+sudo ./install 32bits
+sudo ./install 64bits
+sudo ./install safe
+</pre></div>
+</div>
+<p>如果自动安装失败，请尝试手动编译安装：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>cphalcon/build/64bits
+
+<span class="nb">export </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 --fvisibility=hidden&quot;</span>
+
+./configure --enable-phalcon
+
+make <span class="o">&amp;&amp;</span> sudo make install
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mac-os-x">
+<h2>Mac OS X<a class="headerlink" href="#mac-os-x" title="永久链接至标题">¶</a></h2>
+<p>在Mac OS X系统中你可以通过源代码来编译和安装扩展：</p>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h3>
+<p>Prerequisite packages are:</p>
+<ul class="simple">
+<li>PHP &gt;= 5.5 development resources</li>
+<li>XCode</li>
+</ul>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c"># brew</span>
+brew tap homebrew/homebrew-php
+brew install php55-phalcon
+brew install php56-phalcon
+
+<span class="c"># MacPorts</span>
+sudo port install php55-phalcon
+sudo port install php56-phalcon
+</pre></div>
+</div>
+<p>添加扩展到你的PHP配置文件。</p>
+</div>
+</div>
+<div class="section" id="freebsd">
+<h2>FreeBSD<a class="headerlink" href="#freebsd" title="永久链接至标题">¶</a></h2>
+<p>对于FreeBSD，仅仅只需要简单的命令进行安装：</p>
+<div class="highlight-bash"><div class="highlight"><pre>pkg_add -r phalcon
+</pre></div>
+</div>
+<p>或者</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-O2 --fvisibility=hidden&quot;</span>
+
+<span class="nb">cd</span> /usr/ports/www/phalcon
+
+make install clean
+</pre></div>
+</div>
+</div>
+<div class="section" id="checking-your-installation">
+<h2>确认安装（Checking your installation）<a class="headerlink" href="#checking-your-installation" title="永久链接至标题">¶</a></h2>
+<p>请检查你的:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>phpinfo()`输出了一个&#8221;Phalcon&#8221;部分引用或者执行以下代码片段:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span> <span class="nb">print_r</span><span class="p">(</span><span class="nb">get_loaded_extensions</span><span class="p">());</span> <span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>Phalcon 拓展应该作为输出的一部分出现:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">Array</span>
+<span class="x">(</span>
+<span class="x">    [0] =&gt; Core</span>
+<span class="x">    [1] =&gt; libxml</span>
+<span class="x">    [2] =&gt; filter</span>
+<span class="x">    [3] =&gt; SPL</span>
+<span class="x">    [4] =&gt; standard</span>
+<span class="x">    [5] =&gt; phalcon</span>
+<span class="x">    [6] =&gt; pdo_mysql</span>
+<span class="x">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installation-notes">
+<h2>安装说明（Installation Notes）<a class="headerlink" href="#installation-notes" title="永久链接至标题">¶</a></h2>
+<p>常见Web服务器的安装说明：</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="apache.html">Apache 安装说明（Apache Installation Notes）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">Nginx 安装说明（Nginx Installation Notes）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cherokee.html">Cherokee 安装说明（Cherokee Installation Notes）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="built-in.html">使用 PHP 内置 web 服务器（Using PHP Built-in webserver）</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="xampp.html" title="XAMPP 下的安装（Installation on XAMPP）"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome!"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>

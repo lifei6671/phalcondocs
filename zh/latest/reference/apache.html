@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Apache 安装说明（Apache Installation Notes） &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="Cherokee 安装说明（Cherokee Installation Notes）" href="cherokee.html" />
+    <link rel="prev" title="Nginx 安装说明（Nginx Installation Notes）" href="nginx.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="cherokee.html" title="Cherokee 安装说明（Cherokee Installation Notes）"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="nginx.html" title="Nginx 安装说明（Nginx Installation Notes）"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Apache 安装说明（Apache Installation Notes）</a><ul>
+<li><a class="reference internal" href="#apache-phalcon-configuring-apache-for-phalcon">Apache 下配置 Phalcon（Configuring Apache for Phalcon）</a><ul>
+<li><a class="reference internal" href="#directory-under-the-main-document-root">在主文档根目录下（Directory under the main Document Root）</a></li>
+<li><a class="reference internal" href="#virtual-hosts">虚拟主机（Virtual Hosts）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="nginx.html" title="上一章">&lt; Nginx 安装说明（Nginx Installation Notes）</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="cherokee.html" title="下一章">Cherokee 安装说明（Cherokee Installation Notes） &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/apache.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="apache-apache-installation-notes">
+<h1>Apache 安装说明（Apache Installation Notes）<a class="headerlink" href="#apache-apache-installation-notes" title="永久链接至标题">¶</a></h1>
+<p><a class="reference external" href="http://httpd.apache.org/">Apache</a> 是一个流行且出名的web服务器，并且可以支持很多平台。</p>
+<div class="section" id="apache-phalcon-configuring-apache-for-phalcon">
+<h2>Apache 下配置 Phalcon（Configuring Apache for Phalcon）<a class="headerlink" href="#apache-phalcon-configuring-apache-for-phalcon" title="永久链接至标题">¶</a></h2>
+<p>以下内容是你可能在使用Apache下搭建Phalcon时可能会用到的配置。这些内容重点关注于mod_rewrite模块的配置，以便可以使用友好的链接和路由组件 <a class="reference internal" href="routing.html"><em>router component</em></a> 。通常一个应用会有以下目录结构：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">test/</span>
+<span class="x">  app/</span>
+<span class="x">    controllers/</span>
+<span class="x">    models/</span>
+<span class="x">    views/</span>
+<span class="x">  public/</span>
+<span class="x">    css/</span>
+<span class="x">    img/</span>
+<span class="x">    js/</span>
+<span class="x">    index.php</span>
+</pre></div>
+</div>
+<div class="section" id="directory-under-the-main-document-root">
+<h3>在主文档根目录下（Directory under the main Document Root）<a class="headerlink" href="#directory-under-the-main-document-root" title="永久链接至标题">¶</a></h3>
+<p>这是一种最为常用的情况，应用安装在根目录下的任意一个目录。对于这种情况，我们使用两个.htaccess文件，第一个用于隐藏应用转发全部请求到对应文档根目录（public/）的相关代码。</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="c"># test/.htaccess</span>
+
+<span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+    <span class="nb">RewriteEngine</span> <span class="k">on</span>
+    <span class="nb">RewriteRule</span>  ^$ public/    [L]
+    <span class="nb">RewriteRule</span>  ((?s).*) public/$1 [L]
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>然后第二个.htaccess位于public/下，并将全部的URI重定向到public/index.php文件。</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="c"># test/public/.htaccess</span>
+
+<span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+    <span class="nb">RewriteEngine</span> <span class="k">On</span>
+    <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-d
+    <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+    <span class="nb">RewriteRule</span> ^((?s).*)$ index.php?_url=/$1 [QSA,L]
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+<p>如果你不想使用这些.htaccess文件，你可以将这些配置移到apache的主配置文件中：</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;IfModule</span> <span class="s">mod_rewrite.c</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/www/test&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">RewriteEngine</span> <span class="k">on</span>
+        <span class="nb">RewriteRule</span>  ^$ public/    [L]
+        <span class="nb">RewriteRule</span>  ((?s).*) public/$1 [L]
+    <span class="nt">&lt;/Directory&gt;</span>
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/www/test/public&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">RewriteEngine</span> <span class="k">On</span>
+        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-d
+        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+        <span class="nb">RewriteRule</span> ^((?s).*)$ index.php?_url=/$1 [QSA,L]
+    <span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;/IfModule&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="virtual-hosts">
+<h3>虚拟主机（Virtual Hosts）<a class="headerlink" href="#virtual-hosts" title="永久链接至标题">¶</a></h3>
+<p>第二份配置则允许你可以将一个Phalcon应用安装在虚拟主机：</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+
+    <span class="nb">ServerAdmin</span> <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="2b4a4f4642456b4e534a465b474e054344585f">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>
+    <span class="nb">DocumentRoot</span> <span class="s2">&quot;/var/vhosts/test/public&quot;</span>
+    <span class="nb">DirectoryIndex</span> index.php
+    <span class="nb">ServerName</span> example.host
+    <span class="nb">ServerAlias</span> www.example.host
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/vhosts/test/public&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">Options</span> <span class="k">All</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Allow</span> from <span class="k">all</span>
+    <span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+<p>&gt;= Apache 2.4:</p>
+<div class="highlight-apacheconf"><div class="highlight"><pre><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+
+    <span class="nb">ServerAdmin</span> <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="3150555c585f715449505c415d541f595e4245">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>
+    <span class="nb">DocumentRoot</span> <span class="s2">&quot;/var/vhosts/test/public&quot;</span>
+    <span class="nb">DirectoryIndex</span> index.php
+    <span class="nb">ServerName</span> example.host
+    <span class="nb">ServerAlias</span> www.example.host
+
+    <span class="nt">&lt;Directory</span> <span class="s">&quot;/var/vhosts/test/public&quot;</span><span class="nt">&gt;</span>
+        <span class="nb">Options</span> <span class="k">All</span>
+        <span class="nb">AllowOverride</span> <span class="k">All</span>
+        <span class="nb">Require</span> <span class="k">all</span> granted
+    <span class="nt">&lt;/Directory&gt;</span>
+
+<span class="nt">&lt;/VirtualHost&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="cherokee.html" title="Cherokee 安装说明（Cherokee Installation Notes）"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="nginx.html" title="Nginx 安装说明（Nginx Installation Notes）"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>

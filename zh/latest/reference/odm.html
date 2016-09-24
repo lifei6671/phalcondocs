@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>对象文档映射 ODM (Object-Document Mapper) &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="使用视图（Using Views）" href="views.html" />
+    <link rel="prev" title="缓存对象关系映射（Caching in the ORM）" href="models-cache.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="views.html" title="使用视图（Using Views）"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="models-cache.html" title="缓存对象关系映射（Caching in the ORM）"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">对象文档映射 ODM (Object-Document Mapper)</a><ul>
+<li><a class="reference internal" href="#creating-models">创建模型（Creating Models）</a></li>
+<li><a class="reference internal" href="#understanding-documents-to-objects">理解文档对象（Understanding Documents To Objects）</a></li>
+<li><a class="reference internal" href="#models-in-namespaces">模型中使用命名空间（Models in Namespaces）</a></li>
+<li><a class="reference internal" href="#setting-a-connection">设置连接（Setting a Connection）</a></li>
+<li><a class="reference internal" href="#finding-documents">查找文档（Finding Documents）</a></li>
+<li><a class="reference internal" href="#aggregations">聚合（Aggregations）</a></li>
+<li><a class="reference internal" href="#creating-updating-records">创建和更新记录（Creating Updating/Records）</a><ul>
+<li><a class="reference internal" href="#validation-messages">验证信息（Validation Messages）</a></li>
+<li><a class="reference internal" href="#validation-events-and-events-manager">验证事件和事件管理（Validation Events and Events Manager）</a></li>
+<li><a class="reference internal" href="#implementing-a-business-rule">实现业务规则（Implementing a Business Rule）</a></li>
+<li><a class="reference internal" href="#validating-data-integrity">验证数据完整性（Validating Data Integrity）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deleting-records">删除记录（Deleting Records）</a></li>
+<li><a class="reference internal" href="#validation-failed-events">验证失败事件（Validation Failed Events）</a></li>
+<li><a class="reference internal" href="#id-implicit-ids-vs-user-primary-keys">固有 Id 和 用户主键（Implicit Ids vs. User Primary Keys）</a></li>
+<li><a class="reference internal" href="#setting-multiple-databases">设置多个数据库（Setting multiple databases）</a></li>
+<li><a class="reference internal" href="#injecting-services-into-models">注入服务到模型（Injecting services into Models）</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="models-cache.html" title="上一章">&lt; 缓存对象关系映射（Caching in the ORM）</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="views.html" title="下一章">使用视图（Using Views） &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/odm.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="odm-object-document-mapper">
+<h1>对象文档映射 ODM (Object-Document Mapper)<a class="headerlink" href="#odm-object-document-mapper" title="永久链接至标题">¶</a></h1>
+<p>除了可以 <a class="reference internal" href="models.html"><em>映射关系数据库的表</em></a> 之外，Phalcon还可以使用NoSQL数据库如MongoDB等。Phalcon中的ODM具有可以非常容易的实现如下功能：CRUD,事件，验证等。</p>
+<p>因为NoSQL数据库中无sql查询及计划等操作故可以提高数据操作的性能。再者，由于无SQL语句创建的操作故可以减少SQL注入的危险。</p>
+<p>当前Phalcon中支持的NosSQL数据库如下：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">描述</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="http://www.mongodb.org/">MongoDB</a></td>
+<td>MongoDB是一个稳定的高性能的开源的NoSQL数据</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="creating-models">
+<h2>创建模型（Creating Models）<a class="headerlink" href="#creating-models" title="永久链接至标题">¶</a></h2>
+<p>NoSQL中的模型类扩展自 <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a>.模型必须要放入模型文件夹中而且每个模型文件必须只能有一个模型类；
+模型类名应该为小驼峰法书写：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote class="highlights">
+<div><p>如果PHP版本为5.4/5.5或更高版本，为了提高性能节省内存开销，最好在模型类文件中定义每个字段。</p>
+<p>模型Robots默认和数据库中的robots表格映射。如果想使用别的名字映射数据库中的表格则只需要重写 <code class="code docutils literal"><span class="pre">setSource()</span></code> 方法即可：</p>
+</div></blockquote>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setSource</span><span class="p">(</span><span class="s2">&quot;the_robots&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="understanding-documents-to-objects">
+<h2>理解文档对象（Understanding Documents To Objects）<a class="headerlink" href="#understanding-documents-to-objects" title="永久链接至标题">¶</a></h2>
+<p>每个模型的实例和数据库表中的一个文档（记录）相对应。我们可以非常容易的通过读取对象属性来访问表格的数据。例如访问robots表格：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mongo <span class="nb">test</span>
+MongoDB shell version: 1.8.2
+connecting to: <span class="nb">test</span>
+&gt; db.robots.find<span class="o">()</span>
+<span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;508735512d42b8c3d15ec4e1&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;Astro Boy&quot;</span>, <span class="s2">&quot;year&quot;</span> : 1952,
+    <span class="s2">&quot;type&quot;</span> : <span class="s2">&quot;mechanical&quot;</span> <span class="o">}</span>
+<span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;5087358f2d42b8c3d15ec4e2&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;Bender&quot;</span>, <span class="s2">&quot;year&quot;</span> : 1999,
+    <span class="s2">&quot;type&quot;</span> : <span class="s2">&quot;mechanical&quot;</span> <span class="o">}</span>
+<span class="o">{</span> <span class="s2">&quot;_id&quot;</span> : ObjectId<span class="o">(</span><span class="s2">&quot;508735d32d42b8c3d15ec4e3&quot;</span><span class="o">)</span>, <span class="s2">&quot;name&quot;</span> : <span class="s2">&quot;Wall-E&quot;</span>, <span class="s2">&quot;year&quot;</span> : <span class="m">2008</span> <span class="o">}</span>
+&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="models-in-namespaces">
+<h2>模型中使用命名空间（Models in Namespaces）<a class="headerlink" href="#models-in-namespaces" title="永久链接至标题">¶</a></h2>
+<p>我们在这里可以使用命名空间来避免类名冲突。这个例子中我们使用:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>setSource()`方法来标明要使用的数据库表：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Store\Toys</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setSource</span><span class="p">(</span><span class="s2">&quot;robots&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>我们可以通过对象的ID查找到对象然后打印出其名字：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// Find record with _id = &quot;5087358f2d42b8c3d15ec4e2&quot;</span>
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findById</span><span class="p">(</span><span class="s2">&quot;5087358f2d42b8c3d15ec4e2&quot;</span><span class="p">);</span>
+
+<span class="c1">// Prints &quot;Bender&quot;</span>
+<span class="k">echo</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>一旦记录被加载到内存中，我们就可以对这些数据进行修改了，修改之后还可以保存：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Astro Boy&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">&quot;Voltron&quot;</span><span class="p">;</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-a-connection">
+<h2>设置连接（Setting a Connection）<a class="headerlink" href="#setting-a-connection" title="永久链接至标题">¶</a></h2>
+<p>这里的MongoDB服务是从服务容器中取得的。默认，Phalcon会使mongo作服务名：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// Simple database connection to localhost</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;mongo&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;store&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
+
+<span class="c1">// Connecting to a domain socket, falling back to localhost connection</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;mongo&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span>
+            <span class="s2">&quot;mongodb:///tmp/mongodb-27017.sock,localhost:27017&quot;</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;store&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="finding-documents">
+<h2>查找文档（Finding Documents）<a class="headerlink" href="#finding-documents" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 依赖于Mongo的PHP扩展，这样我们就可以直接从数据库中查询出文档记录然后Phalcon会
+透明的（我们无需关心过程和方法）为我们转换为模型的实例。
+<a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a></p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// How many robots are there?</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s2">&quot;There are &quot;</span><span class="p">,</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$robots</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="c1">// How many mechanical robots are there?</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;There are &quot;</span><span class="p">,</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$robots</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="c1">// Get and print mechanical robots ordered by name upward</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;sort&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$robots</span> <span class="k">as</span> <span class="nv">$robot</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Get first 100 mechanical robots ordered by name</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;sort&quot;</span>  <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;limit&quot;</span> <span class="o">=&gt;</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$robots</span> <span class="k">as</span> <span class="nv">$robot</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>这里我们可以使用 <code class="code docutils literal"><span class="pre">findFirst()</span></code> 来取得配置查询的第一条记录：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// What&#39;s the first robot in robots collection?</span>
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s2">&quot;The robot name is &quot;</span><span class="p">,</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+<span class="c1">// What&#39;s the first mechanical robot in robots collection?</span>
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+<span class="k">echo</span> <span class="s2">&quot;The first mechanical robot name is &quot;</span><span class="p">,</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p><code class="code docutils literal"><span class="pre">find()</span></code> 和 <code class="code docutils literal"><span class="pre">findFirst()</span></code> 方法都接收一个关联数据组为查询的条件：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// First robot where type = &quot;mechanical&quot; and year = &quot;1999&quot;</span>
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;conditions&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;year&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;1999&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="c1">// All virtual robots ordered by name downward</span>
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;conditions&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;virtual&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;sort&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="s2">&quot;name&quot;</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>可用的查询选项：</p>
+<p>如果你有使用sql(关系)数据库的经验，你也许想查看二者的映射表格 <a class="reference external" href="http://www.php.net/manual/en/mongo.sqltomongo.php">SQL to Mongo Mapping Chart</a> .</p>
+</div>
+<div class="section" id="aggregations">
+<h2>聚合（Aggregations）<a class="headerlink" href="#aggregations" title="永久链接至标题">¶</a></h2>
+<p>我们可以使用Mongo提供的方法使用Mongo模型返回聚合结果。聚合结果不是使用MapReduce来计算的。基于此，我们可以非常容易的取得聚合值，比如总计或平均值等:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$data</span> <span class="o">=</span> <span class="nx">Article</span><span class="o">::</span><span class="na">aggregate</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">project&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s2">&quot;category&quot;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">group&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s2">&quot;_id&quot;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s2">&quot;category&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">category&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;id&quot;</span>  <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">max&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">_id&quot;</span><span class="p">,</span>
+                <span class="p">],</span>
+            <span class="p">],</span>
+        <span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creating-updating-records">
+<h2>创建和更新记录（Creating Updating/Records）<a class="headerlink" href="#creating-updating-records" title="永久链接至标题">¶</a></h2>
+<p><code class="code docutils literal"><span class="pre">Phalcon\Mvc\Collection::save()</span></code> 方法可以用来保存数据，Phalcon会根据当前数据库中的数据来对比以确定是新加一条数据还是更新数据。在Phalcon内部会直接使用
+<a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 的save或update方法来进行操作。</p>
+<p>当然这个方法内部也会调用我们在模型中定义的验证方法或事件等：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$robot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Robots</span><span class="p">();</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">type</span> <span class="o">=</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">;</span>
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">&quot;Astro Boy&quot;</span><span class="p">;</span>
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="mi">1952</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">()</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Umh, We can&#39;t store robots right now: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+    <span class="nv">$messages</span> <span class="o">=</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">();</span>
+
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$messages</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="nv">$message</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Great, a new robot was saved successfully!&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>&#8220;_id&#8221;属性会被Mongo驱动自动的随MongId_而更新。</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+
+<span class="k">echo</span> <span class="s2">&quot;The generated id is: &quot;</span><span class="p">,</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="section" id="validation-messages">
+<h3>验证信息（Validation Messages）<a class="headerlink" href="#validation-messages" title="永久链接至标题">¶</a></h3>
+<p><a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 提供了一个信息子系统，使用此系统开发者可以非常容易的实现在数据处理中的验证信息的显示及保存。</p>
+<p>每条信息即是一个 <a class="reference internal" href="../api/Phalcon_Mvc_Model_Message.html"><em>Phalcon\Mvc\Model\Message</em></a> 类的对象实例。我们使用getMessages来取得此信息。每条信息中包含了
+如哪个字段产生的消息，或是消息类型等信息：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">()</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$messages</span> <span class="o">=</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">();</span>
+
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$messages</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Message: &quot;</span><span class="p">,</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&quot;Field: &quot;</span><span class="p">,</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getField</span><span class="p">();</span>
+        <span class="k">echo</span> <span class="s2">&quot;Type: &quot;</span><span class="p">,</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="validation-events-and-events-manager">
+<h3>验证事件和事件管理（Validation Events and Events Manager）<a class="headerlink" href="#validation-events-and-events-manager" title="永久链接至标题">¶</a></h3>
+<p>在模型类的数据操作过程中可以产生一些事件。我们可以在这些事件中定义一些业务规则。下面是 <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 所支持的事件及其执行顺序：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="31%" />
+<col width="21%" />
+<col width="30%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">操作</th>
+<th class="head">名称</th>
+<th class="head">能否停止操作</th>
+<th class="head">解释</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Inserting/Updating</td>
+<td><code class="code docutils literal"><span class="pre">beforeValidation</span></code></td>
+<td>YES</td>
+<td>在验证和最终插入/更新进行之执行</td>
+</tr>
+<tr class="row-odd"><td>Inserting</td>
+<td><code class="code docutils literal"><span class="pre">beforeValidationOnCreate</span></code></td>
+<td>YES</td>
+<td>仅当创建新条目验证之前执行</td>
+</tr>
+<tr class="row-even"><td>Updating</td>
+<td><code class="code docutils literal"><span class="pre">beforeValidationOnUpdate</span></code></td>
+<td>YES</td>
+<td>仅在更新条目验证之前</td>
+</tr>
+<tr class="row-odd"><td>Inserting/Updating</td>
+<td><code class="code docutils literal"><span class="pre">onValidationFails</span></code></td>
+<td>YES (already stopped)</td>
+<td>验证执行失败后执行</td>
+</tr>
+<tr class="row-even"><td>Inserting</td>
+<td><code class="code docutils literal"><span class="pre">afterValidationOnCreate</span></code></td>
+<td>YES</td>
+<td>新建条目验证之后执行</td>
+</tr>
+<tr class="row-odd"><td>Updating</td>
+<td><code class="code docutils literal"><span class="pre">afterValidationOnUpdate</span></code></td>
+<td>YES</td>
+<td>更新条目后执行</td>
+</tr>
+<tr class="row-even"><td>Inserting/Updating</td>
+<td><code class="code docutils literal"><span class="pre">afterValidation</span></code></td>
+<td>YES</td>
+<td>在验证进行之前执</td>
+</tr>
+<tr class="row-odd"><td>Inserting/Updating</td>
+<td><code class="code docutils literal"><span class="pre">beforeSave</span></code></td>
+<td>YES</td>
+<td>在请示的操作（保存）运行之前</td>
+</tr>
+<tr class="row-even"><td>Updating</td>
+<td><code class="code docutils literal"><span class="pre">beforeUpdate</span></code></td>
+<td>YES</td>
+<td>更新操作执行之前运行</td>
+</tr>
+<tr class="row-odd"><td>Inserting</td>
+<td><code class="code docutils literal"><span class="pre">beforeCreate</span></code></td>
+<td>YES</td>
+<td>创建操作执行之前运行</td>
+</tr>
+<tr class="row-even"><td>Updating</td>
+<td><code class="code docutils literal"><span class="pre">afterUpdate</span></code></td>
+<td>NO</td>
+<td>更新执行之后执行</td>
+</tr>
+<tr class="row-odd"><td>Inserting</td>
+<td><code class="code docutils literal"><span class="pre">afterCreate</span></code></td>
+<td>NO</td>
+<td>创建执行之后</td>
+</tr>
+<tr class="row-even"><td>Inserting/Updating</td>
+<td><code class="code docutils literal"><span class="pre">afterSave</span></code></td>
+<td>NO</td>
+<td>保存执行之后</td>
+</tr>
+</tbody>
+</table>
+<p>为了响应一个事件，我们需在模型中实现同名方法：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeValidationOnCreate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;This is executed before creating a Robot!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>在执行操作之前先在指定的事件中设置值有时是非常有用的：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Products</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeCreate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Set the creation date</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">created_at</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;Y-m-d H:i:s&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeUpdate</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Set the modification date</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">modified_in</span> <span class="o">=</span> <span class="nb">date</span><span class="p">(</span><span class="s2">&quot;Y-m-d H:i:s&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>另外，这个组件也可以和 <a class="reference internal" href="events.html"><em>Phalcon\Events\Manager</em></a> 进行集成，这就意味着我们可以通过事件触发创建监听器。</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\Event</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">;</span>
+
+<span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+
+<span class="c1">// Attach an anonymous function as a listener for &quot;model&quot; events</span>
+<span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span>
+    <span class="s2">&quot;collection:beforeSave&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">,</span> <span class="nv">$robot</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">===</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">&quot;Scooby Doo isn&#39;t a robot!&quot;</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+
+<span class="nv">$robot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Robots</span><span class="p">();</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">;</span>
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">=</span> <span class="mi">1969</span><span class="p">;</span>
+
+<span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>上面的例子中EventsManager仅在对象和监听器（匿名函数）之间扮演了一个桥接器的角色。如果我们想在创建应用时使用同一个EventsManager,我们需要把这个EventsManager对象设置到 collectionManager服务中：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Events\Event</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Events\Manager</span> <span class="k">as</span> <span class="nx">EventsManager</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection\Manager</span> <span class="k">as</span> <span class="nx">CollectionManager</span><span class="p">;</span>
+
+<span class="c1">// Registering the collectionManager service</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;collectionManager&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$eventsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">EventsManager</span><span class="p">();</span>
+
+        <span class="c1">// Attach an anonymous function as a listener for &quot;model&quot; events</span>
+        <span class="nv">$eventsManager</span><span class="o">-&gt;</span><span class="na">attach</span><span class="p">(</span>
+            <span class="s2">&quot;collection:beforeSave&quot;</span><span class="p">,</span>
+            <span class="k">function</span> <span class="p">(</span><span class="nx">Event</span> <span class="nv">$event</span><span class="p">,</span> <span class="nv">$model</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">get_class</span><span class="p">(</span><span class="nv">$model</span><span class="p">)</span> <span class="o">===</span> <span class="s2">&quot;Robots&quot;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="nv">$model</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">===</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">echo</span> <span class="s2">&quot;Scooby Doo isn&#39;t a robot!&quot;</span><span class="p">;</span>
+
+                        <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">);</span>
+
+        <span class="c1">// Setting a default EventsManager</span>
+        <span class="nv">$modelsManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CollectionManager</span><span class="p">();</span>
+
+        <span class="nv">$modelsManager</span><span class="o">-&gt;</span><span class="na">setEventsManager</span><span class="p">(</span><span class="nv">$eventsManager</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$modelsManager</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="implementing-a-business-rule">
+<h3>实现业务规则（Implementing a Business Rule）<a class="headerlink" href="#implementing-a-business-rule" title="永久链接至标题">¶</a></h3>
+<p>当插入或更新删除等执行时，模型会检查上面表格中列出的方法是否存在。</p>
+<p>我们建议定义模型里的验证方法以避免业务逻辑暴露出来。</p>
+<p>下面的例子中实现了在保存或更新时对年份的验证，年份不能小于0年：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSave</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">year</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">&quot;Year cannot be smaller than zero!&quot;</span><span class="p">;</span>
+
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>在响应某些事件时返回了false则会停止当前的操作。 如果事实响应未返回任何值， <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 会假定返回了true值。</p>
+</div>
+<div class="section" id="validating-data-integrity">
+<h3>验证数据完整性（Validating Data Integrity）<a class="headerlink" href="#validating-data-integrity" title="永久链接至标题">¶</a></h3>
+<p><a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 提供了若干个事件用于验证数据和实现业务逻辑。特定的事件中我们可以调用内建的验证器，
+Phalcon提供了一些验证器可以用在此阶段的验证上。</p>
+<p>下面的例子中展示了如何使用：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Model\Validator\InclusionIn</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Model\Validator\Numericality</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nx">InclusionIn</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;field&quot;</span>   <span class="o">=&gt;</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;message&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Type must be: mechanical or virtual&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;domain&quot;</span>  <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s2">&quot;Mechanical&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;Virtual&quot;</span><span class="p">,</span>
+                    <span class="p">],</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nx">Numericality</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;field&quot;</span>   <span class="o">=&gt;</span> <span class="s2">&quot;price&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;message&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Price must be numeric&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validationHasFailed</span><span class="p">()</span> <span class="o">!==</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>上面的例子使用了内建的&#8221;InclusionIn&#8221;验证器。这个验证器检查了字段的类型是否在指定的范围内。如果值不在范围内即验证失败会返回false.
+下面支持的内验证器：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="79%" />
+<col width="21%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">解释</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Email.html"><em>Phalcon\Mvc\Model\Validator\Email</em></a></td>
+<td>验证email是否正确</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Exclusionin.html"><em>Phalcon\Mvc\Model\Validator\Exclusionin</em></a></td>
+<td>验证值是否不在指定的范围内</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Inclusionin.html"><em>Phalcon\Mvc\Model\Validator\Inclusionin</em></a></td>
+<td>验证值是否在指定的范围内</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Numericality.html"><em>Phalcon\Mvc\Model\Validator\Numericality</em></a></td>
+<td>检查字段是否为数字型</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_Regex.html"><em>Phalcon\Mvc\Model\Validator\Regex</em></a></td>
+<td>正则检查</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/Phalcon_Mvc_Model_Validator_StringLength.html"><em>Phalcon\Mvc\Model\Validator\StringLength</em></a></td>
+<td>检查字串长度</td>
+</tr>
+</tbody>
+</table>
+<p>除了内建的验证器外，我们还可以创建自己的验证器：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Model\Validator</span> <span class="k">as</span> <span class="nx">CollectionValidator</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">UrlValidator</span> <span class="k">extends</span> <span class="nx">CollectionValidator</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="nv">$model</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$field</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getOption</span><span class="p">(</span><span class="s2">&quot;field&quot;</span><span class="p">);</span>
+
+        <span class="nv">$value</span> <span class="o">=</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="nv">$field</span><span class="p">;</span>
+
+        <span class="nv">$filtered</span> <span class="o">=</span> <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$value</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_URL</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$filtered</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appendMessage</span><span class="p">(</span>
+                <span class="s2">&quot;The URL is invalid&quot;</span><span class="p">,</span>
+                <span class="nv">$field</span><span class="p">,</span>
+                <span class="s2">&quot;UrlValidator&quot;</span>
+            <span class="p">);</span>
+
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>添加验证器到模型：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Customers</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span>
+            <span class="k">new</span> <span class="nx">UrlValidator</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="s2">&quot;field&quot;</span>  <span class="o">=&gt;</span> <span class="s2">&quot;url&quot;</span><span class="p">,</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">validationHasFailed</span><span class="p">()</span> <span class="o">===</span> <span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>创建验证器的目的即是使之在多个模型间重复利用以实现代码重用。验证器可简单如下：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Model\Message</span> <span class="k">as</span> <span class="nx">ModelMessage</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">type</span> <span class="o">===</span> <span class="s2">&quot;Old&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$message</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ModelMessage</span><span class="p">(</span>
+                <span class="s2">&quot;Sorry, old robots are not allowed anymore&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;MyType&quot;</span>
+            <span class="p">);</span>
+
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">appendMessage</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+
+            <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="deleting-records">
+<h2>删除记录（Deleting Records）<a class="headerlink" href="#deleting-records" title="永久链接至标题">¶</a></h2>
+<p><code class="code docutils literal"><span class="pre">Phalcon\Mvc\Collection::delete()</span></code> 方法用来删除记录条目。我们可以如下使用：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$robot</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">findFirst</span><span class="p">();</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span> <span class="o">!==</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">()</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Sorry, we can&#39;t delete the robot right now: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+        <span class="nv">$messages</span> <span class="o">=</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">();</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$messages</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="nv">$message</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;The robot was deleted successfully!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>也可以使用遍历的方式删除多个条目的数据：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$robots</span> <span class="o">=</span> <span class="nx">Robots</span><span class="o">::</span><span class="na">find</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;type&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;mechanical&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$robots</span> <span class="k">as</span> <span class="nv">$robot</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">()</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;Sorry, we can&#39;t delete the robot right now: </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+
+        <span class="nv">$messages</span> <span class="o">=</span> <span class="nv">$robot</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">();</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$messages</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="nv">$message</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">echo</span> <span class="s2">&quot;The robot was deleted successfully!&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>当删除操作执行时我们可以执行如下事件，以实现定制业务逻辑的目的：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="23%" />
+<col width="22%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">操作</th>
+<th class="head">名称</th>
+<th class="head">是否可停止</th>
+<th class="head">解释</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>删除</td>
+<td><code class="code docutils literal"><span class="pre">beforeDelete</span></code></td>
+<td>是</td>
+<td>删除之前执行</td>
+</tr>
+<tr class="row-odd"><td>删除</td>
+<td><code class="code docutils literal"><span class="pre">afterDelete</span></code></td>
+<td>否</td>
+<td>删除之后执行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="validation-failed-events">
+<h2>验证失败事件（Validation Failed Events）<a class="headerlink" href="#validation-failed-events" title="永久链接至标题">¶</a></h2>
+<p>验证失败时依据不同的情形下列事件会触发：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="38%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">操作</th>
+<th class="head">名称</th>
+<th class="head">解释</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>插入和或更新</td>
+<td><code class="code docutils literal"><span class="pre">notSave</span></code></td>
+<td>当插入/更新操作失败时触</td>
+</tr>
+<tr class="row-odd"><td>插入删除或更新</td>
+<td><code class="code docutils literal"><span class="pre">onValidationFails</span></code></td>
+<td>当数据操作失败时触发</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id-implicit-ids-vs-user-primary-keys">
+<h2>固有 Id 和 用户主键（Implicit Ids vs. User Primary Keys）<a class="headerlink" href="#id-implicit-ids-vs-user-primary-keys" title="永久链接至标题">¶</a></h2>
+<p>默认 <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 会使用MongoIds_来产生 <code class="code docutils literal"><span class="pre">_id</span></code>.如果用户想自定义主键也可以只需：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">useImplicitObjectIds</span><span class="p">(</span><span class="k">false</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="setting-multiple-databases">
+<h2>设置多个数据库（Setting multiple databases）<a class="headerlink" href="#setting-multiple-databases" title="永久链接至标题">¶</a></h2>
+<p>Phalcon中，所有的模型可以只属于一个数据库或是多个数据库。事实上当 <a class="reference internal" href="../api/Phalcon_Mvc_Collection.html"><em>Phalcon\Mvc\Collection</em></a> 试图连接数据库时
+Phalcon会从DI中取名为mongo的服务。当然我们可在模型的initialize方法中进行连接设置：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// This service returns a mongo database at 192.168.1.100</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;mongo1&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span>
+            <span class="s2">&quot;mongodb://scott:<a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="402e252b28252e007179726e7176786e716e717070">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script>&quot;</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;management&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
+
+<span class="c1">// This service returns a mongo database at localhost</span>
+<span class="nv">$di</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span>
+    <span class="s2">&quot;mongo2&quot;</span><span class="p">,</span>
+    <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nv">$mongo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">(</span>
+            <span class="s2">&quot;mongodb://localhost&quot;</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$mongo</span><span class="o">-&gt;</span><span class="na">selectDB</span><span class="p">(</span><span class="s2">&quot;invoicing&quot;</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="k">true</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>然后在初始化方法，我们定义了模型的连接：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">initialize</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setConnectionService</span><span class="p">(</span><span class="s2">&quot;mongo1&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="injecting-services-into-models">
+<h2>注入服务到模型（Injecting services into Models）<a class="headerlink" href="#injecting-services-into-models" title="永久链接至标题">¶</a></h2>
+<p>我们可能需要在模型内使用应用的服务，下面的例子中展示了如何去做：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Collection</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Robots</span> <span class="k">extends</span> <span class="nx">Collection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">notSave</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// Obtain the flash service from the DI container</span>
+        <span class="nv">$flash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDI</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">getShared</span><span class="p">(</span><span class="s2">&quot;flash&quot;</span><span class="p">);</span>
+
+        <span class="nv">$messages</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMessages</span><span class="p">();</span>
+
+        <span class="c1">// Show validation messages</span>
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$messages</span> <span class="k">as</span> <span class="nv">$message</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$flash</span><span class="o">-&gt;</span><span class="na">error</span><span class="p">(</span>
+                <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$message</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>notSave事件在创建和更新失败时触发。我们使用flash服务来处理验证信息。如此做我们无需在每次保存后打印消息出来。</p>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="views.html" title="使用视图（Using Views）"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="models-cache.html" title="缓存对象关系映射（Caching in the ORM）"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>资源文件管理（Assets Management） &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="Volt 模版引擎（Volt: Template Engine）" href="volt.html" />
+    <link rel="prev" title="视图助手 (Tags)（View Helpers (Tags)）" href="tags.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="volt.html" title="Volt 模版引擎（Volt: Template Engine）"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="tags.html" title="视图助手 (Tags)（View Helpers (Tags)）"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">资源文件管理（Assets Management）</a><ul>
+<li><a class="reference internal" href="#adding-resources">添加资源（Adding Resources）</a></li>
+<li><a class="reference internal" href="#local-remote-resources">本地与远程资源（Local/Remote resources）</a></li>
+<li><a class="reference internal" href="#collections">集合（Collections）</a></li>
+<li><a class="reference internal" href="#url-prefixes">前缀（URL Prefixes）</a></li>
+<li><a class="reference internal" href="#minification-filtering">压缩与过滤（Minification/Filtering）</a><ul>
+<li><a class="reference internal" href="#built-in-filters">内置过滤器（Built-In Filters）</a></li>
+<li><a class="reference internal" href="#custom-filters">自定义过滤器（Custom Filters）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#custom-output">自定义输出（Custom Output）</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="tags.html" title="上一章">&lt; 视图助手 (Tags)（View Helpers (Tags)）</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="volt.html" title="下一章">Volt 模版引擎（Volt: Template Engine） &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/assets.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="assets-management">
+<h1>资源文件管理（Assets Management）<a class="headerlink" href="#assets-management" title="永久链接至标题">¶</a></h1>
+<p><code class="code docutils literal"><span class="pre">Phalcon\Assets</span></code> 是一个让开发者管理静态资源的组件，如管理CSS，JavaScript等。</p>
+<p><a class="reference internal" href="../api/Phalcon_Assets_Manager.html"><em>Phalcon\Assets\Manager</em></a> 存在于DI容器中，所以我们可以在服务容器存在的
+任何地方使用它来添加/管理资源。</p>
+<div class="section" id="adding-resources">
+<h2>添加资源（Adding Resources）<a class="headerlink" href="#adding-resources" title="永久链接至标题">¶</a></h2>
+<p>Assets支持两个内置的资源管理器：css和javascripts.我们可以根据需要创建其它的资源。资源管理器内部保存了两类资源集合一为
+JavaScript另一为CSS.</p>
+<p>我们可以非常简单的向这两个集合里添加资源，如下：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Controller</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">IndexController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// 添加本地CSS资源</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addCss</span><span class="p">(</span><span class="s2">&quot;css/style.css&quot;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addCss</span><span class="p">(</span><span class="s2">&quot;css/index.css&quot;</span><span class="p">);</span>
+
+        <span class="c1">// 添加本地JavaScript资源</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/jquery.js&quot;</span><span class="p">);</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/bootstrap.min.js&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>然后我们可以在视图中输出资源：</p>
+<div class="highlight-html+php"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Some amazing website<span class="nt">&lt;/title&gt;</span>
+
+        <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">outputCss</span><span class="p">();</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="c">&lt;!-- ... --&gt;</span>
+
+        <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">outputJs</span><span class="p">();</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+</pre></div>
+</div>
+<p>Volt语法：</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Some amazing website<span class="nt">&lt;/title&gt;</span>
+
+        <span class="cp">{{</span> <span class="nv">assets.outputCss</span><span class="o">()</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="c">&lt;!-- ... --&gt;</span>
+
+        <span class="cp">{{</span> <span class="nv">assets.outputJs</span><span class="o">()</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+</pre></div>
+</div>
+<p>为了提升页面加载性能，建议在页面底部（&lt;/body&gt;标签前）加载javascript，而不是在 <code class="code docutils literal"><span class="pre">&lt;head&gt;</span></code> 处加载。</p>
+</div>
+<div class="section" id="local-remote-resources">
+<h2>本地与远程资源（Local/Remote resources）<a class="headerlink" href="#local-remote-resources" title="永久链接至标题">¶</a></h2>
+<p>本地资源是同一应用中的资源，这些资源存在于应用的根目录中。 <a class="reference internal" href="../api/Phalcon_Mvc_Url.html"><em>Phalcon\Mvc\Url</em></a> 用来生成
+本地的url.</p>
+<p>远程资源即是一种存在于CDN或其它远程服务器上的资源，比如常用的jQuery, Bootstrap等资源。</p>
+<p><code class="code docutils literal"><span class="pre">addCss()</span></code> 和 <code class="code docutils literal"><span class="pre">addJs()</span></code> 方法的第二个参数的作用是申明当前资源是本地资源还是远程资源(<code class="code docutils literal"><span class="pre">true</span></code> 为本地资源, <code class="code docutils literal"><span class="pre">false</span></code> 为远程资源)。
+不传此参数时，默认为本地资源:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">public</span> <span class="k">function</span> <span class="nf">indexAction</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="c1">// 添加远程及本地资源</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addCss</span><span class="p">(</span><span class="s2">&quot;//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css&quot;</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addCss</span><span class="p">(</span><span class="s2">&quot;css/style.css&quot;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">addCss</span><span class="p">(</span><span class="s2">&quot;css/extra.css&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collections">
+<h2>集合（Collections）<a class="headerlink" href="#collections" title="永久链接至标题">¶</a></h2>
+<p>集合即是把一同类的资源放在一些，资源管理器隐含的创建了两个集合：css和js. 当然我们可以创建其它的集合以归类其它的资源， 这样我们可以很容易的
+在视图里显示：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// HTML 头部的js资源</span>
+<span class="nv">$headerCollection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span>
+
+<span class="nv">$headerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/jquery.js&quot;</span><span class="p">);</span>
+<span class="nv">$headerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/bootstrap.min.js&quot;</span><span class="p">);</span>
+
+<span class="c1">// HTML尾部的js资源</span>
+<span class="nv">$footerCollection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;footer&quot;</span><span class="p">);</span>
+
+<span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/jquery.js&quot;</span><span class="p">);</span>
+<span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/bootstrap.min.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>然后在视图中如下使用：</p>
+<div class="highlight-html+php"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Some amazing website<span class="nt">&lt;/title&gt;</span>
+
+        <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">outputJs</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="c">&lt;!-- ... --&gt;</span>
+
+        <span class="cp">&lt;?php</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">outputJs</span><span class="p">(</span><span class="s2">&quot;footer&quot;</span><span class="p">);</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+</pre></div>
+</div>
+<p>Volt语法：</p>
+<div class="highlight-html+jinja"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Some amazing website<span class="nt">&lt;/title&gt;</span>
+
+        <span class="cp">{{</span> <span class="nv">assets.outputCss</span><span class="o">(</span><span class="s2">&quot;header&quot;</span><span class="o">)</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+        <span class="c">&lt;!-- ... --&gt;</span>
+
+        <span class="cp">{{</span> <span class="nv">assets.outputJs</span><span class="o">(</span><span class="s2">&quot;footer&quot;</span><span class="o">)</span> <span class="cp">}}</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="url-prefixes">
+<h2>前缀（URL Prefixes）<a class="headerlink" href="#url-prefixes" title="永久链接至标题">¶</a></h2>
+<p>集合可以添加前缀，这可以实现非常简单的更换服务器：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$footerCollection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;footer&quot;</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$config</span><span class="o">-&gt;</span><span class="na">environment</span> <span class="o">==</span> <span class="s2">&quot;development&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">setPrefix</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">setPrefix</span><span class="p">(</span><span class="s2">&quot;http:://cdn.example.com/&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/jquery.js&quot;</span><span class="p">);</span>
+<span class="nv">$footerCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/bootstrap.min.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>我们也可以使用链式语法，如下：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$headerCollection</span> <span class="o">=</span> <span class="nv">$assets</span>
+    <span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;header&quot;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setPrefix</span><span class="p">(</span><span class="s2">&quot;http://cdn.example.com/&quot;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">setLocal</span><span class="p">(</span><span class="k">false</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/jquery.js&quot;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;js/bootstrap.min.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="minification-filtering">
+<h2>压缩与过滤（Minification/Filtering）<a class="headerlink" href="#minification-filtering" title="永久链接至标题">¶</a></h2>
+<p><code class="code docutils literal"><span class="pre">Phalcon\Assets</span></code> 提供了内置的js及css压缩工具。 开发者可以设定资源管理器以确定对哪些资源进行压缩哪些资源不进行压缩。除了上面这些之外，
+我们还可以使用Douglas Crockford书写的Jsmin压缩工具，及Ryan Day提供的CSSMin来对js及css文件进行压缩.
+下面的例子中展示了如何使用集合对资源文件进行压缩：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$manager</span>
+
+    <span class="c1">// 这些javascript资源位于html文件的底部</span>
+    <span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;jsFooter&quot;</span><span class="p">)</span>
+
+    <span class="c1">// 最终输出名</span>
+    <span class="o">-&gt;</span><span class="na">setTargetPath</span><span class="p">(</span><span class="s2">&quot;final.js&quot;</span><span class="p">)</span>
+
+    <span class="c1">// 使用此uri显示资源</span>
+    <span class="o">-&gt;</span><span class="na">setTargetUri</span><span class="p">(</span><span class="s2">&quot;production/final.js&quot;</span><span class="p">)</span>
+
+    <span class="c1">// 添加远程资源但不压缩</span>
+    <span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;code.jquery.com/jquery-1.10.0.min.js&quot;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">)</span>
+
+    <span class="c1">// 这些资源必须要压缩</span>
+    <span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;common-functions.js&quot;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;page-functions.js&quot;</span><span class="p">)</span>
+
+    <span class="c1">// 把这些资源放入一个文件内</span>
+    <span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="k">true</span><span class="p">)</span>
+
+    <span class="c1">// 使用内置的JsMin过滤器</span>
+    <span class="o">-&gt;</span><span class="na">addFilter</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">Phalcon\Assets\Filters\Jsmin</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="c1">// 使用自定义过滤器</span>
+    <span class="o">-&gt;</span><span class="na">addFilter</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">MyApp\Assets\Filters\LicenseStamper</span><span class="p">()</span>
+    <span class="p">);</span>
+</pre></div>
+</div>
+<p>开始部分我们通过资源管理器取得了一个命名的集合，集合中可以包含JavaScript或CSS资源但不能同时包含两个。一些资源可能位于远程的服务器上，
+这些资源我们可以通过http取得。为了提高性能建议把远程的资源取到本地来，以减少加载远程资源的开销。</p>
+<p>如上示例，<code class="code docutils literal"><span class="pre">addJs()</span></code> 方法用于将资源添加到集合中，第二个参数表示当前资源是否为外部资源，第三个参数表示当前资源是否需要进行压缩:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// 这些Javscript文件放在页面的底端</span>
+<span class="nv">$jsFooterCollection</span> <span class="o">=</span> <span class="nv">$manager</span><span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;jsFooter&quot;</span><span class="p">);</span>
+
+<span class="c1">// 添加远程资源但不压缩</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;code.jquery.com/jquery-1.10.0.min.js&quot;</span><span class="p">,</span> <span class="k">false</span><span class="p">,</span> <span class="k">false</span><span class="p">);</span>
+
+<span class="c1">// These are local resources that must be filtered</span>
+<span class="c1">// 添加本地资源并压缩</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;common-functions.js&quot;</span><span class="p">);</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">addJs</span><span class="p">(</span><span class="s2">&quot;page-functions.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>过滤器被注册到集合内，我们可以注册多个过滤器，资源内容被过滤的顺序和过滤器注册的顺序是一样的。</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// 使用内置的Jsmin过滤器</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">addFilter</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">Phalcon\Assets\Filters\Jsmin</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">// 使用自定义的过滤器</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">addFilter</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">MyApp\Assets\Filters\LicenseStamper</span><span class="p">()</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>注意：不管是内置的还是自定义的过滤器对集合来说他们都是透明的。最后一步用来确定所有的资源文件写到同一个文件中还是分开保存。如果要让集合中所有的资源文件合成
+一个文件只需要使用:code:<a href="#id1"><span class="problematic" id="id2">`</span></a>join()`函数.</p>
+<p>如果资源被写入同一文件，则我们需要定义使用哪一个文件来保存要写入的资源数据，及使用一个ur来展示资源。这两个设置可以使用 <code class="code docutils literal"><span class="pre">setTargetPath()</span></code>
+和 <code class="code docutils literal"><span class="pre">setTargetUri()</span></code> 两个函数来配置:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">join</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+<span class="c1">// 设置最终输出文件</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">setTargetPath</span><span class="p">(</span><span class="s2">&quot;public/production/final.js&quot;</span><span class="p">);</span>
+
+<span class="c1">// 使用此uri引用js</span>
+<span class="nv">$jsFooterCollection</span><span class="o">-&gt;</span><span class="na">setTargetUri</span><span class="p">(</span><span class="s2">&quot;production/final.js&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="section" id="built-in-filters">
+<h3>内置过滤器（Built-In Filters）<a class="headerlink" href="#built-in-filters" title="永久链接至标题">¶</a></h3>
+<p>Phalcon内置了两个过滤器以分别实现对JavaScript及CSS的压缩，由于二者是使用c实现的故极大的减少了性能上的开销：</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="56%" />
+<col width="44%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">过滤器</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference internal" href="../api/Phalcon_Assets_Filters_Jsmin.html"><em>Phalcon\Assets\Filters\Jsmin</em></a></td>
+<td>压缩JavaScript文件即去除掉JavaScript解释器/编译器忽略的一些字符</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="../api/Phalcon_Assets_Filters_Cssmin.html"><em>Phalcon\Assets\Filters\Cssmin</em></a></td>
+<td>压缩CSS文件即去除掉浏览器在渲染CSS时不需要的一些字符</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="custom-filters">
+<h3>自定义过滤器（Custom Filters）<a class="headerlink" href="#custom-filters" title="永久链接至标题">¶</a></h3>
+<p>除了使用Phalcon内置的过滤器外，开发者还可以创建自己的过滤器。这样我们就可以使用 <a class="reference external" href="http://yui.github.io/yuicompressor/">YUI</a>, <a class="reference external" href="http://sass-lang.com/">Sass</a>, <a class="reference external" href="https://developers.google.com/closure/compiler/?hl=fr">Closure</a>, 等。</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Assets\FilterInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * 使用YUI过滤CSS内容</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param string $contents</span>
+<span class="sd"> * @return string</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">CssYUICompressor</span> <span class="k">implements</span> <span class="nx">FilterInterface</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$_options</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * CssYUICompressor 构造函数</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param array $options</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="k">array</span> <span class="nv">$options</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span> <span class="o">=</span> <span class="nv">$options</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * 执行过滤</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $contents</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">filter</span><span class="p">(</span><span class="nv">$contents</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// 保存字符吕内容到临时文件中</span>
+        <span class="nb">file_put_contents</span><span class="p">(</span><span class="s2">&quot;temp/my-temp-1.css&quot;</span><span class="p">,</span> <span class="nv">$contents</span><span class="p">);</span>
+
+        <span class="nb">system</span><span class="p">(</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">[</span><span class="s2">&quot;java-bin&quot;</span><span class="p">]</span> <span class="o">.</span>
+            <span class="s2">&quot; -jar &quot;</span> <span class="o">.</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">[</span><span class="s2">&quot;yui&quot;</span><span class="p">]</span> <span class="o">.</span>
+            <span class="s2">&quot; --type css &quot;</span> <span class="o">.</span>
+            <span class="s2">&quot;temp/my-temp-file-1.css &quot;</span> <span class="o">.</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">[</span><span class="s2">&quot;extra-options&quot;</span><span class="p">]</span> <span class="o">.</span>
+            <span class="s2">&quot; -o temp/my-temp-file-2.css&quot;</span>
+        <span class="p">);</span>
+
+        <span class="c1">// 返回文件内容</span>
+        <span class="k">return</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">&quot;temp/my-temp-file-2.css&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>用法:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// 取CSS集合</span>
+<span class="nv">$css</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s2">&quot;head&quot;</span><span class="p">);</span>
+
+<span class="c1">// 添加/启用YUI压缩器</span>
+<span class="nv">$css</span><span class="o">-&gt;</span><span class="na">addFilter</span><span class="p">(</span>
+    <span class="k">new</span> <span class="nx">CssYUICompressor</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;java-bin&quot;</span>      <span class="o">=&gt;</span> <span class="s2">&quot;/usr/local/bin/java&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;yui&quot;</span>           <span class="o">=&gt;</span> <span class="s2">&quot;/some/path/yuicompressor-x.y.z.jar&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;extra-options&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;--charset utf8&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>In a previous example, we used a custom filter called <code class="code docutils literal"><span class="pre">LicenseStamper</span></code>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Assets\FilterInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Adds a license message to the top of the file</span>
+<span class="sd"> *</span>
+<span class="sd"> * @param string $contents</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return string</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">LicenseStamper</span> <span class="k">implements</span> <span class="nx">FilterInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Do the filtering</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param string $contents</span>
+<span class="sd">     * @return string</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">filter</span><span class="p">(</span><span class="nv">$contents</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$license</span> <span class="o">=</span> <span class="s2">&quot;/* (c) 2015 Your Name Here */&quot;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$license</span> <span class="o">.</span> <span class="nx">PHP_EOL</span> <span class="o">.</span> <span class="nx">PHP_EOL</span> <span class="o">.</span> <span class="nv">$contents</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="custom-output">
+<h2>自定义输出（Custom Output）<a class="headerlink" href="#custom-output" title="永久链接至标题">¶</a></h2>
+<p><code class="code docutils literal"><span class="pre">outputJs()</span></code> 及 <code class="code docutils literal"><span class="pre">outputCss()</span></code> 方法可以依据不同的资源类来创建需要的HTML代码。我们可以重写这个方法或是手动的输出这些资源方法如下：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Tag</span><span class="p">;</span>
+
+<span class="nv">$jsCollection</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assets</span><span class="o">-&gt;</span><span class="na">collection</span><span class="p">(</span><span class="s2">&quot;js&quot;</span><span class="p">);</span>
+
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$jsCollection</span> <span class="k">as</span> <span class="nv">$resource</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="nx">Tag</span><span class="o">::</span><span class="na">javascriptInclude</span><span class="p">(</span>
+        <span class="nv">$resource</span><span class="o">-&gt;</span><span class="na">getPath</span><span class="p">()</span>
+    <span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="volt.html" title="Volt 模版引擎（Volt: Template Engine）"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="tags.html" title="视图助手 (Tags)（View Helpers (Tags)）"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>

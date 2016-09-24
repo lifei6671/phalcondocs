@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Understanding How Phalcon Applications Work &mdash; Phalcon 3.0.1 文档</title>
+    <meta name="keywords" content="php, phalcon, phalcon php, php framework, faster php framework">
+    <link rel="stylesheet" type="text/css" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/www/css/phalcon.min.css" />
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Merriweather:400,700" rel="stylesheet" type="text/css" />
+    <!--
+    EUROPE <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin-ext' rel='stylesheet' type='text/css'>
+    GREEK <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=greek-ext' rel='stylesheet' type='text/css'>
+    RUSSIA <link href='//fonts.googleapis.com/css?family=Open+Sans:700,400&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    -->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../static/docs.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.1',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+
+    <script src="http://cdn.staticfile.org/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/docs.js"></script>
+    <link rel="shortcut icon" href="../static/favicon.ico"/>
+    <link rel="top" title="Phalcon 3.0.1 文档" href="../index.html" />
+    <link rel="next" title="API Indice" href="../api/index.html" />
+    <link rel="prev" title="Dependency Injection Explained" href="di-explained.html" /> 
+  </head>
+  <body>
+
+<header class="page-header">
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-container">
+                    <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand phalcon-logo" href="/"><span itemprop="name" class="sr-only">Phalcon PHP</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-right" id="main-menu-container">
+                <ul class="nav navbar-nav main-menu">
+                  <li class="first"><a href="//phalconphp.com/en/download" class="header-nav-link">Download</a></li>
+                  <li><a href="//docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                  <li><a href="//forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                  <li><a href="//blog.phalconphp.com/" class="header-nav-link" target="_blank">Blog</a></li>
+                  <li><a href="//phalconist.com/" class="header-nav-link" target="_blank">Resources</a></li>
+                  <li><a href="//phalconphp.com/en/about">About</a></li>
+                  <li><div align="right">
+                      <iframe src="https://ghbtns.com/github-btn.html?user=phalcon&amp;repo=cphalcon&amp;type=watch&amp;count=true&amp;size=large"
+      allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  </header>
+
+<div class="heading">
+    <div class="container">
+        <div class="row">
+            <h2>Documentation</h2>
+        </div>
+    </div>
+</div>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../api/index.html" title="API Indice"
+             accesskey="N">下一页</a> |</li>
+        <li class="right" >
+          <a href="di-explained.html" title="Dependency Injection Explained"
+             accesskey="P">上一页</a> |</li>
+        <li><a href="//phalconphp.com">Home</a> &raquo;</li>
+        <li><a href="../index.html">Phalcon 3.0.1 文档</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+      <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+      <td class="primary-box" width="25%" valign="top">
+            <div>
+            <div id="searchbox" style="">
+                <!--<form class="search" action="http://readthedocs.org/search/project/" method="get">
+                  <input type="search" name="q" size="25" placeholder="Search">
+                  <input type="submit" value="Go">
+                  <input type="hidden" name="selected_facets" value="project:">
+                </form>-->
+                <div style="width:200px;padding:10px">
+                  <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+            </div>
+            </div>
+            <div style="padding:5px;padding-left:10px">
+              <div id="carbonads-container">
+                <div class="carbonad"><div id="azcarbon"></div>
+                <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=phalconphpcom" id="_carbonads_js"></script>
+                </div></div>
+            </div>
+            <h3><a href="../index.html">內容目录</a></h3>
+            <ul>
+<li><a class="reference internal" href="#">Understanding How Phalcon Applications Work</a><ul>
+<li><a class="reference internal" href="#manual-bootstrapping">手动启动（Manual bootstrapping）</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>上一个主题</h4>
+            <p class="topless"><a href="di-explained.html" title="上一章">&lt; Dependency Injection Explained</a></p>
+            <h4>下一个主题</h4>
+            <p class="topless"><a href="../api/index.html" title="下一章">API Indice &gt;</a></p>
+            <h3>本页</h3>
+            <ul class="this-page-menu">
+              <li><a href="../sources/reference/applications-explained.md" rel="nofollow">显示源代码</a></li>
+            </ul>
+        </td>
+          <td class="second-box" valign="top">
+            <div class="document">
+                <div class="documentwrapper">
+                  <div class="bodywrapper">
+                    <div class="body" >
+                      
+  <div class="section" id="understanding-how-phalcon-applications-work">
+<h1>Understanding How Phalcon Applications Work<a class="headerlink" href="#understanding-how-phalcon-applications-work" title="永久链接至标题">¶</a></h1>
+<p>如果你已经看过了 <a class="reference internal" href="tutorial.html"><em>tutorial</em></a> 或者已经通过 <a class="reference internal" href="tools.html"><em>Phalcon Devtools</em></a> 生成了代码，
+你将很容易识别以下的启动文件：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Mvc\Application</span><span class="p">;</span>
+
+<span class="c1">// 注册自动加载器</span>
+<span class="c1">// ...</span>
+
+<span class="c1">// 注册服务</span>
+<span class="c1">// ...</span>
+
+<span class="c1">// 处理请求</span>
+<span class="nv">$application</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Application</span><span class="p">(</span><span class="nv">$di</span><span class="p">);</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Exception: &quot;</span><span class="p">,</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>控制器中全部核心的工作都会在handle()被回调时触发执行。</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$application</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="section" id="manual-bootstrapping">
+<h2>手动启动（Manual bootstrapping）<a class="headerlink" href="#manual-bootstrapping" title="永久链接至标题">¶</a></h2>
+<p>如果你不想使用 <a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> ，以上的代码可以改成这样：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="c1">// 获取 &#39;router&#39; 服务</span>
+<span class="nv">$router</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">];</span>
+
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+<span class="nv">$view</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;view&quot;</span><span class="p">];</span>
+
+<span class="nv">$dispatcher</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;dispatcher&quot;</span><span class="p">];</span>
+
+<span class="c1">// 传递路由的相关数据传递给调度器</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setControllerName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getControllerName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setActionName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getActionName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">// 启动视图</span>
+<span class="nv">$view</span><span class="o">-&gt;</span><span class="na">start</span><span class="p">();</span>
+
+<span class="c1">// 请求调度</span>
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">();</span>
+
+<span class="c1">// 渲染相关视图</span>
+<span class="nv">$view</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">getControllerName</span><span class="p">(),</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">getActionName</span><span class="p">(),</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">// 完成视图</span>
+<span class="nv">$view</span><span class="o">-&gt;</span><span class="na">finish</span><span class="p">();</span>
+
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;response&quot;</span><span class="p">];</span>
+
+<span class="c1">// 传递视图内容给响应对象</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContent</span><span class="p">(</span>
+    <span class="nv">$view</span><span class="o">-&gt;</span><span class="na">getContent</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">// Send the response</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>以下代码替换了 <a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> ，虽然缺少了视图组件，
+但却更适合Rest风格的API接口：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Http\ResponseInterface</span><span class="p">;</span>
+
+<span class="c1">// 获取 &#39;router&#39; 服务</span>
+<span class="nv">$router</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">];</span>
+
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+<span class="nv">$dispatcher</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;dispatcher&quot;</span><span class="p">];</span>
+
+<span class="c1">// 传递路由的相关数据传递给调度器</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setControllerName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getControllerName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setActionName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getActionName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="c1">// 请求调度</span>
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">();</span>
+
+<span class="c1">// 获取最后的返回结果</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">getReturnedValue</span><span class="p">();</span>
+
+<span class="c1">// 判断结果是否是 &#39;response&#39; 对象</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$response</span> <span class="nx">instanceof</span> <span class="nx">ResponseInterface</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 发送响应</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>另外一个修改就是在分发器中对抛出异常的捕捉可以将请求转发到其他的操作：</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Phalcon\Http\ResponseInterface</span><span class="p">;</span>
+
+<span class="c1">// 获取 &#39;router&#39; 服务</span>
+<span class="nv">$router</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;router&quot;</span><span class="p">];</span>
+
+<span class="nv">$router</span><span class="o">-&gt;</span><span class="na">handle</span><span class="p">();</span>
+
+<span class="nv">$dispatcher</span> <span class="o">=</span> <span class="nv">$di</span><span class="p">[</span><span class="s2">&quot;dispatcher&quot;</span><span class="p">];</span>
+
+<span class="c1">// 传递路由的相关数据传递给调度器</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setControllerName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getControllerName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setActionName</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getActionName</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setParams</span><span class="p">(</span>
+    <span class="nv">$router</span><span class="o">-&gt;</span><span class="na">getParams</span><span class="p">()</span>
+<span class="p">);</span>
+
+<span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// 请求调度</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">();</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// An exception has occurred, dispatch some controller/action aimed for that</span>
+
+    <span class="c1">// Pass the processed router parameters to the dispatcher</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setControllerName</span><span class="p">(</span><span class="s2">&quot;errors&quot;</span><span class="p">);</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">setActionName</span><span class="p">(</span><span class="s2">&quot;action503&quot;</span><span class="p">);</span>
+
+    <span class="c1">// Dispatch the request</span>
+    <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// 获取最后的返回结果</span>
+<span class="nv">$response</span> <span class="o">=</span> <span class="nv">$dispatcher</span><span class="o">-&gt;</span><span class="na">getReturnedValue</span><span class="p">();</span>
+
+<span class="c1">// 判断结果是否是 &#39;response&#39; 对象</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$response</span> <span class="nx">instanceof</span> <span class="nx">ResponseInterface</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 发送响应</span>
+    <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>尽管上面的代码比使用 <a class="reference internal" href="../api/Phalcon_Mvc_Application.html"><em>Phalcon\Mvc\Application</em></a> 而需要的代码远远要累赘得很，
+但它为启动你的应用提供了一个可修改、可定制化的途径。
+因为根据你的项目需要，你可以想对实例什么和不实例化什么进行完全的控制，或者想用你自己的组件来替代那些确定和必须的组件从而扩展默认的功能。</p>
+</div>
+</div>
+
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <div class="related">
+      <ul>
+        <li class="right" >
+          <a href="../genindex.html" title="总目录"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../api/index.html" title="API Indice"
+             >下一页</a> |</li>
+        <li class="right" >
+          <a href="di-explained.html" title="Dependency Injection Explained"
+             >上一页</a> |</li> 
+      </ul>
+    </div>
+
+      <div class="prefooter">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-3 text-right">
+              <span>Follow along:</span>
+          </div>
+          <div class="col-sm-6 text-center">
+              <a href="https://twitter.com/phalconphp" alt="Twitter" class="btn-social btn-social-twitter"><i class="icon-twitter"></i></a>
+              <a href="https://www.facebook.com/pages/Phalcon-Framework/134230726685897" alt="Facebook" class="btn-social btn-social-facebook"><i class="icon-facebook"></i></a>
+              <a href="https://plus.google.com/102376109340560896457" alt="Google+" class="btn-social btn-social-googleplus"><i class="icon-googleplus"></i></a>
+              <a href="https://github.com/phalcon/cphalcon" alt="Github" class="btn-social btn-social-github"><i class="icon-github"></i></a>
+          </div>
+          <div class="col-sm-3">
+          </div>
+      </div>
+  </div>
+
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 col-sm-3">
+                <h4>Download</h4>
+                <ul>
+                    <li><a href="/download">Installing Phalcon PHP</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/index.html" class="header-nav-link" target="_blank">Documentation</a></li>
+                    <li><a href="http://api.phalconphp.com">API</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html">Tutorial</a></li>
+                    <li><a href="http://docs.phalconphp.com/en/latest/reference/tutorial.html#sample-applications">Sample Applications</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-3">
+                <h4>Community</h4>
+                <ul>
+                    <li><a href="http://forum.phalconphp.com/" class="header-nav-link" target="_blank">Forum</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon">GitHub</a></li>
+                    <li><a href="https://github.com/phalcon/cphalcon/issues">Issue Tracker</a></li>
+                    <li><a href="http://stackoverflow.com/questions/tagged/phalcon">Stack Overflow</a></li>
+                    <li><a href="/en/testimonials">Testimonials</a></li>
+                    <li><a href="http://builtwith.phalconphp.com/">Built with Phalcon</a></li>
+                    <li><a href="http://store.phalconphp.com/">Store</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-4 col-sm-2">
+                <h4>About</h4>
+                <ul>
+                    <li><a class="link-black" href="http://blog.phalconphp.com/">Blog</a></li>
+                    <li><a href="/en/about">About</a></li>
+                    <li><a href="/en/team">Team</a></li>
+                    <li><a href="/en/roadmap">Roadmap</a></li>
+                    <li><a href="/en/donate">Donate</a></li>
+                    <li><a href="/en/consulting">Consulting</a></li>
+                    <li><a href="/en/hosting">Hosting</a></li>
+                </ul>
+            </div>
+            <div id="license-spaccer" class="visible-xs"></div>
+            <div id="license-wrapper" class="col-xs-12 col-sm-4">
+                <p class="license">
+                    Phalcon is an open-source PHP framework <br>built as a C-extension. It is available under the <br>
+                    <a href="http://opensource.org/licenses/BSD-3-Clause" target="_blank">new BSD License</a>.
+                    <br>
+                    <br>
+                    Except where otherwise noted, content on this site is licensed under the
+                    <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    </div>
+    <script type="text/javascript">
+    $(window).on("load", function(){
+      var cx = '009733439235723428699:lh9ltjgvdz8';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//www.google.com/cse/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    });
+    </script>
+
+  </body>
+</html>
