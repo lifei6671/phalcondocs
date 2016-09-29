@@ -1489,3 +1489,20 @@ ul.social-icons li a {
 .no-cssanimations .bg-slideshow li span{
 	opacity: 1;
 }
+#fixed .toctree-l1{
+	list-style-image: url("/www/images/folder.png");
+	cursor: pointer;
+}
+.tree-open{
+	list-style-image: url("/www/images/folder_open.png") !important;
+}
+.tree-close{
+	list-style-image: url("/www/images/folder.png") !important;
+}
+#fixed .toctree-l1 a{
+	font-size: 12px;
+}
+#fixed .toctree-l1>ul{
+	display: none;
+	list-style-image: none;
+}
