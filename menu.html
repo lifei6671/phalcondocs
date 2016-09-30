@@ -1327,9 +1327,14 @@
         var path = ".toctree-l1 a[href='"+ window.location.pathname +"']";
         var current = $(path).length;
         if(current > 0){
-            $(path).parent('.toctree-l1').addClass('tree-open').children('ul').show();
+            var parent = $(path).parents('.toctree-l1');
+            parent.find('.jstree-icon').addClass('jstree-open');
+            parent.children('ul').show();
         }else {
-            $(path).parent('.toctree-l1').addClass('tree-open').children('ul').show();
+            var parent =  $(path).parents('.toctree-l1');
+
+            parent.find('jstree-icon').addClass('jstree-open');
+            parent.children('ul').show();
         }
     });
 </script>
