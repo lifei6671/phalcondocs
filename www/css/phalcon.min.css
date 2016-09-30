@@ -1512,10 +1512,18 @@ ul.social-icons li a {
 
 #fixed .toctree-l2 a:hover{
     color: #C00;
+    font-weight: bold;
 }
 #fixed .toctree-l1>ul{
 	display: none;
 	list-style-image: none;
+}
+.jstree-wholerow:hover{
+    background-color:#4183C4 ;
+    color: #ffffff;
+}
+.jstree-wholerow:hover a{
+    color: #ffffff;
 }
 .jstree-wholerow{
     cursor: pointer;
