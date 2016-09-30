@@ -1502,6 +1502,10 @@ ul.social-icons li a {
 #fixed .toctree-l1 a{
 	font-size: 12px;
 }
+
+#fixed .toctree-l2 a:hover{
+    color: #C00;
+}
 #fixed .toctree-l1>ul{
 	display: none;
 	list-style-image: none;
